@@ -51,7 +51,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Get Started',
         },
         {
           href: 'https://github.com/zsmoore/kotlin-dsl-basics',
@@ -67,7 +67,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Kotlin Overview',
               to: '/docs/intro',
             },
           ],
