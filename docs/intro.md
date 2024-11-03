@@ -1,9 +1,6 @@
 ---
 sidebar_position: 1
 ---
-
-import KTPlaygroundWrapper from '@site/src/components/KTPlaygroundWrapper';
-
 # Kotlin Overview
 
 ## What is Kotlin?
