@@ -67,9 +67,13 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Kotlin Overview',
+              label: 'About Kotlin',
               to: '/docs/intro',
             },
+            {
+              label: 'Language Overview',
+              to: '/docs/category/language-overview'
+            }
           ],
         },
         {

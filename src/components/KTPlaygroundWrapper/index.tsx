@@ -1,12 +1,18 @@
 import React, { PropsWithChildren } from 'react';
 import { useColorMode } from '@docusaurus/theme-common';
-import KTPlayground from 'kotlin-playground-react-component';
+import KTPlayground, {KTPlaygroundProps} from 'kotlin-playground-react-component';
 
-const KTPlaygroundWrapper = (props: PropsWithChildren) => {
+const KTPlaygroundWrapper = (props: PropsWithChildren<KTPlaygroundProps>) => {
   const { colorMode } = useColorMode();
 
   return (
-    <KTPlayground theme={colorMode === 'dark' ? 'darcula' : 'default'}>
+    <KTPlayground {...props}
+     theme={colorMode === 'dark' ? 'darcula' : 'default'}
+     indent={2}
+     autoComplete={true}
+     onFlyHighlight={true}
+     lines={true}
+     matchBrackets={true}>
       {props.children}
     </KTPlayground>
   );

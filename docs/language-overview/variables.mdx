@@ -1,0 +1,96 @@
+---
+sidebar_position: 1
+---
+
+import KTPlaygroundWrapper from '@site/src/components/KTPlaygroundWrapper';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { DefaultTabValues } from '@site/src/components/Utils';
+
+# Variables
+
+Basic variable declarations in Kotlin come in the form of   
+\{`mutability indicator`\} \{`variable name`\} _(optional)_ \{`: variable type`\}
+
+#### Prefix
+Semi-colons are optional in Kotlin and should be omitted in all cases that don't require them.  
+Do not worry about the situations in which they are required until you encounter an error.
+
+#### Mutability Indicator
+This can either be `val` or `var`.  
+`val` refers to a immutable variable (cannot be re-assigned). 
+<KTPlaygroundWrapper highlightOnly={true}>
+```spaced
+// Usage of non re-assignable variables
+val aNum = 5
+val aNotherNum = 5 + 5
+
+// This is an ERROR since aNum is a val
+aNum = 10
+```
+</KTPlaygroundWrapper> 
+`var` refers to a traditional Java mutable variable.  
+<KTPlaygroundWrapper highlightOnly={true}>
+```spaced
+// Usage of re-assignable variables
+var aNum = 5
+aNum += 5
+aNum = 0
+```
+</KTPlaygroundWrapper>
+
+<details>
+  <summary>Other languages</summary>
+  ```mdx-code-block
+  <Tabs
+    values={DefaultTabValues}>
+    <TabItem value='java'>
+    In java `val` is equivalent to marking a variable as `final` although this is rarely done with local variables.  
+    `var` is unnecessary in java as all non-final variables are mutable.
+    </TabItem>
+    <TabItem value='javascript'>
+    `val` is equivalent to `const`  
+    `var` is equivalent to `var` or `let`
+    </TabItem>
+    <TabItem value='typescript'>
+    `val` is equivalent to `const`  
+    `var` is equivalent to `let`
+    </TabItem>
+    <TabItem value='swift'>
+    `val` is equivalent to `let`  
+    `var` is equivalent to `var`
+    </TabItem>
+    <TabItem value='objective-c'>
+    `val` is equivalent to `const` although this is rarely done with local variables.  
+    `var` is unnecessary in Objective-C as variables are mutable by default.
+    </TabItem>
+  </Tabs>
+  ```
+</details>
+
+**Typing Variables**
+
+As mentioned in our [Kotlin Intro](../intro.md) Kotlin has type inference.  
+This means that Kotlin will allow the developer to **omit** the type of a variable if the compiler is able to infer it.  
+What does this look like in practice?  
+
+<KTPlaygroundWrapper highlightOnly={true}>
+```spaced
+// This is a constant variable with it's type inferred
+val aString = "I am a String"
+
+// This is a constant variable with it's type inferred even though it is not hard coded
+val aUpperCaseString = aString.toUpperCase()
+
+// This is a constant variable with it's type explicitly set
+val aNum: Int = 2
+
+// This is an ERROR as the compiler cannot infer the variable type since it is not assigned a value
+val aBool
+```
+</KTPlaygroundWrapper>
+
+When you do not assign a value to a variable, it's type cannot be inferred and thus is an error if you omit the type.  
+
+**Opinion** -  
+In **general** when coding in large software codebases it is good to provide types in certain times when it is not necessary to improve readability and code searchability.
