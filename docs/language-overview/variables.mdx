@@ -30,12 +30,17 @@ aNum = 10
 ```
 </KTPlaygroundWrapper> 
 `var` refers to a traditional Java mutable variable.  
-<KTPlaygroundWrapper highlightOnly={true}>
+<KTPlaygroundWrapper>
 ```spaced
+fun main() {
+//sampleStart
 // Usage of re-assignable variables
 var aNum = 5
 aNum += 5
 aNum = 0
+//sampleEnd
+println("The variable aNum's value is ${aNum}")
+}
 ```
 </KTPlaygroundWrapper>
 
